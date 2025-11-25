@@ -186,7 +186,7 @@ PINECONE_INDEX_NAME=roadmap-index
 
 ## 🚀 Usage
 
-* Visit `http://127.0.0.1:8000`
+* Visit web app
 * Create account or login as guest
 * Chat with Roadmap AI
 * Upload documents for NotebookLM-style responses
