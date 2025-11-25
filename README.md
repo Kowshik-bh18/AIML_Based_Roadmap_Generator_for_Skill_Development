@@ -1,76 +1,116 @@
-# 🧠 AIML_Based_Roadmap_Generator_for_Skill_Development
+# 🚀 AIML-Based Roadmap Generator for Skill Development
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" alt="Django"/>
-  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" alt="Python"/>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"/>
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"/>
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"/>
-  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" alt="Bootstrap"/>
-  <img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white" alt="SQLite"/>
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/LLM-RAG-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Pinecone-Vector_DB-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/HuggingFace-Models-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Ollama-Mistral_7B-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
 </div>
 
 <div align="center">
-  <h3>A comprehensive Django-based web application for generating skill-development roadmaps, NotebookLM-style note integration, and AI-powered chat workflows.</h3>
-  <p>Live demo: 🔗 <a href="https://rmpai.pythonanywhere.com/">https://rmpai.pythonanywhere.com/</a></p>
+  <h3>An intelligent, AI-powered personalized roadmap generator designed for students, professionals, and learners using RAG, Vector Databases, and LLMs.</h3>
+  <p>Built using Django, Python, Pinecone, Hugging Face, Ollama (Mistral-7B), and deployed on PythonAnywhere.</p>
+  <br>
+  <a href="https://rmpai.pythonanywhere.com/" style="font-size:22px; font-weight:bold;">🔗 Live Demo</a>
 </div>
 
 ---
 
-## 📋 Table of Contents
+## 📌 Table of Contents
 
-- [Features](#-features)  
-- [Project Structure](#-project-structure)  
-- [Technologies Used](#️-technologies-used)  
-- [Installation](#-installation)  
-- [Usage](#-usage)  
-- [Contributing](#-contributing)  
-- [License](#-license)  
-- [Contact](#-contact)  
-- [Contributors](#-contributors)  
+* [Features](#features)
+* [Tech Stack](#tech-stack)
+* [AI/ML Architecture](#aiml-architecture)
+* [Project Structure](#project-structure)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Contributors](#contributors)
+* [Contact](#contact)
 
 ---
 
 ## ✨ Features
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/🧭-Roadmap_Generator-blue?style=for-the-badge" alt="Roadmap"/>
-        <br><strong>Skill Roadmap AI</strong>
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/📓-NotebookLM_Mini-green?style=for-the-badge" alt="NotebookLM"/>
-        <br><strong>NotebookLM-style Notes</strong>
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/💬-AI_Chat_Integration-orange?style=for-the-badge" alt="Chat"/>
-        <br><strong>AI Chat Interface</strong>
-      </td>
-    </tr>
-    <tr>
-      <td align="center">
-        <img src="https://img.shields.io/badge/🔒-User_Auth_and_Subscriptions-purple?style=for-the-badge" alt="Auth"/>
-        <br><strong>User Authentication & Premium Access</strong>
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/📊-Usage_Limits_and_Tracking-red?style=for-the-badge" alt="Usage"/>
-        <br><strong>Usage & Request Tracking</strong>
-      </td>
-      <td align="center">
-        <img src="https://img.shields.io/badge/📁-Export_Chat_Downloads-yellow?style=for-the-badge" alt="Export"/>
-        <br><strong>Export Chat History</strong>
-      </td>
-    </tr>
-  </table>
-</div>
+### 🧠 AI-Powered Learning
 
-### Additional Highlights:
-- 🗂️ Secure Uploads & File Handling  
-- 🛡️ Role-based Access (Free vs Premium)  
-- 📱 Responsive Design – Works across devices  
-- ⚡ Real-time Updates & Clean UI  
+* Personalized **skill roadmaps** using LLMs
+* **RAG (Retrieval Augmented Generation)** for accurate responses
+* Vector search using **Pinecone**
+* AI-powered **NotebookLM-like document assistant**
+* Custom query answering using **Mistral 7B via Ollama**
+
+### 🧾 User System
+
+* User authentication (Login/Register/Guest mode)
+* Premium subscription system with admin approval
+* Request limits for free users
+
+### 💬 Smart Chat System
+
+* Persistence chat memory
+* Export chats as **PDF / JSON / TXT / PPTX**
+* Notebook file upload + intelligent document analysis
+
+### 🎨 UI/UX
+
+* Modern Bootstrap UI
+* Smooth animations
+* Dark mode support
+
+### ☁ Deployment
+
+* Backend deployed on **PythonAnywhere**
+* AI/RAG backend ready for Hugging Face Space/Ollama local server
+
+---
+
+## 🧩 Tech Stack
+
+### **Backend**
+
+* Django
+* Python 3
+* REST API
+* Pinecone (Vector DB)
+* RAG Pipeline
+* Ollama Mistral 7B
+
+### **Frontend**
+
+* HTML5, CSS3, JavaScript
+* Bootstrap
+
+### **AI / ML**
+
+* Hugging Face embeddings
+* Mistral 7B (via Ollama)
+* Vector search + retrieval
+
+### **Deployment**
+
+* PythonAnywhere (Live Server)
+* HuggingFace Space (Optional Model Hosting)
+
+---
+
+## 🧠 AIML Architecture
+
+```
+User → Query → Embedding Model → Pinecone Vector DB → Relevant Chunks → LLM (Mistral 7B) → Final Answer
+```
+
+Flow:
+
+1. User asks a question
+2. Convert query to embedding
+3. Search Pinecone vector DB
+4. Retrieve top matches
+5. Feed context to Mistral-7B (RAG)
+6. AI produces a structured and accurate answer
 
 ---
 
@@ -79,133 +119,111 @@
 ```
 AIML_Based_Roadmap_Generator_for_Skill_Development/
 │
-├── 📂 ai_app/                    # Core Django app (views, models, templates)
-├── 📂 static/                    # Static assets (CSS, JS, images including logo.jpg)
-├── 📂 templates/                 # HTML templates
-├── 📂 media/                     # Uploaded files (e.g., payment proofs)
-├── ⚙️ manage.py                  # Django management script
-├── 📋 requirements.txt           # Python dependencies
-└── 📖 README.md                  # Project documentation
+├── ai_app/                 # Main app: roadmap AI, chat, premium
+├── ai_notebook/            # NotebookLM-like AI processing
+├── ai_roadmap_app/         # Django project settings
+├── notebook_files/         # Uploaded documents
+├── static/                 # JS/CSS/Images
+├── media/                  # User uploads
+│
+├── manage.py
+├── requirements.txt
+├── test.py
+└── README.md
 ```
 
 ---
 
-## ⚙️ Technologies Used
-
-### Backend  
-<img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white"/>  
-<img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white"/>  
-<img src="https://img.shields.io/badge/SQLite-003B57?style=for-the-badge&logo=sqlite&logoColor=white"/>
-
-### Frontend  
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white"/>  
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white"/>  
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black"/>  
-<img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white"/>
-
----
-
-## 🚀 Installation
+## 🛠 Installation
 
 ### Prerequisites
-- Python 3.8 or higher  
-- pip  
-- Git  
 
-### Step 1: Clone the Repository
+* Python 3.10+
+* Git
+* Pinecone API Key
+* HuggingFace Token
+* Ollama installed (for local LLM)
+
+### Step 1: Clone
+
 ```bash
 git clone https://github.com/Kowshik-bh18/AIML_Based_Roadmap_Generator_for_Skill_Development.git
 cd AIML_Based_Roadmap_Generator_for_Skill_Development
 ```
 
-### Step 2: Create a Virtual Environment
-```bash
-python -m venv venv
-# Windows
-venv\Scripts\activate
-# macOS/Linux
-source venv/bin/activate
-```
+### Step 2: Virtual Environment
 
-### Step 3: Install Dependencies
 ```bash
+python -m venv myenv
+myenv/Scripts/activate
 pip install -r requirements.txt
 ```
 
-### Step 4: Set Up Database
+### Step 3: Django Setup
+
 ```bash
 python manage.py makemigrations
 python manage.py migrate
-```
-
-### Step 5: Create Superuser (Optional)
-```bash
-python manage.py createsuperuser
-```
-
-### Step 6: Run the Development Server
-```bash
 python manage.py runserver
 ```
 
-### Step 7: Open Your Browser
-Go to `http://127.0.0.1:8000` and explore the app.
+### Step 4: Configure LLM (Local)
+
+```bash
+ollama run mistral
+```
+
+### Step 5: Pinecone Setup
+
+Add in `.env` or settings:
+
+```
+PINECONE_API_KEY=xxxx
+PINECONE_INDEX_NAME=roadmap-index
+```
 
 ---
 
-## 🎯 Usage
+## 🚀 Usage
 
-- Register or Log in (Free access)  
-- Use the Roadmap generator  
-- Upload sources & chat with AI  
-- Upgrade to Premium for unlimited access  
+* Visit `http://127.0.0.1:8000`
+* Create account or login as guest
+* Chat with Roadmap AI
+* Upload documents for NotebookLM-style responses
+* Upgrade to premium for unlimited usage
 
 ---
 
 ## 🤝 Contributing
 
-We welcome your contributions! Please follow the steps:
+Want to improve this project?
 
-1. Fork the repository  
-2. Create your feature branch  
-   ```bash
-   git checkout -b feature/AmazingFeature
-   ```  
-3. Commit your changes  
-   ```bash
-   git commit -m 'Add some AmazingFeature'
-   ```  
-4. Push to the branch  
-   ```bash
-   git push origin feature/AmazingFeature
-   ```  
-5. Open a Pull Request  
+1. Fork repo
+2. Create branch
+3. Commit changes
+4. Open Pull Request
 
-### Contributors
+---
+
+## 👥 Contributors
 
 <div align="center">
   <table>
     <tr>
       <td align="center">
-        <img src="https://github.com/Kowshik-bh18.png" width="100px;" alt="Kowshik BH"/>
-        <br />
-        <sub><b>Kowshik BH</b></sub>
-        <br />
-        <a href="https://github.com/Kowshik-bh18">Developer</a>
+        <img src="https://github.com/Kowshik-bh18.png" width="100px;" />
+        <br><b>Kowshik BH</b><br>
+        <a href="https://github.com/Kowshik-bh18">🚀 Developer</a>
       </td>
       <td align="center">
-        <img src="https://github.com/madhusudhan-31.png" width="100px;" alt="MadhuSudhan"/>
-        <br />
-        <sub><b>Madhu Sudhan</b></sub>
-        <br />
-        <a href="https://github.com/madhusudhan-31">Developer</a>
+        <img src="https://github.com/madhusudhan-31.png" width="100px;" />
+        <br><b>Madhu Sudhan</b><br>
+        <a href="https://github.com/madhusudhan-31">💻 Contributor</a>
       </td>
       <td align="center">
-        <img src="https://github.com/MDGanesha.png" width="100px;" alt="MD Ganesha"/>
-        <br />
-        <sub><b>MD Ganesha</b></sub>
-        <br />
-        <a href="https://github.com/MDGanesha">🔧 Developer</a>
+        <img src="https://github.com/MDGanesha.png" width="100px;" />
+        <br><b>MD Ganesha</b><br>
+        <a href="https://github.com/MDGanesha">🔧 Contributor</a>
       </td>
     </tr>
   </table>
@@ -213,28 +231,18 @@ We welcome your contributions! Please follow the steps:
 
 ---
 
-## 🌐 Live Demo
-
-Check it out here: [https://rmpai.pythonanywhere.com/](https://rmpai.pythonanywhere.com/)
-
----
-
 ## 📞 Contact
 
 <div align="center">
-  <h3>Get in Touch</h3>
-  
-  **Kowshik BH**  
-  [![Email](https://img.shields.io/badge/Email-kowshibh18@gmail.com-red?style=for-the-badge&logo=gmail&logoColor=white)](mailto:kowshibh18@gmail.com)  
-  [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/kowshikbh)  
-  [![GitHub](https://img.shields.io/badge/GitHub-Follow-black?style=for-the-badge&logo=github&logoColor=white)](https://github.com/Kowshik-bh18)  
+
+### **Kowshik BH**
+
+[Email](mailto:kowshikbh18@gmail.com) | [LinkedIn](https://www.linkedin.com/in/kowshikbh) | [GitHub](https://github.com/Kowshik-bh18)
+
 </div>
 
 ---
 
 <div align="center">
-  <h3>⭐ Star this repository if you found it helpful!</h3>
-  <img src="https://img.shields.io/github/stars/Kowshik-bh18/AIML_Based_Roadmap_Generator_for_Skill_Development?style=social" alt="GitHub stars"/>
-  <img src="https://img.shields.io/github/forks/Kowshik-bh18/AIML_Based_Roadmap_Generator_for_Skill_Development?style=social" alt="GitHub forks"/>
-  <img src="https://img.shields.io/github/watchers/Kowshik-bh18/AIML_Based_Roadmap_Generator_for_Skill_Development?style=social" alt="GitHub watchers"/>
+  <h3>⭐ If you like this project, consider starring the repo!</h3>
 </div>
