@@ -41,3 +41,6 @@ googleapis-common-protos==1.70.0
 
 # ---- OPTIONAL (remove if not needed) ----
 PyYAML==6.0.3
+
+gunicorn
+whitenoise
