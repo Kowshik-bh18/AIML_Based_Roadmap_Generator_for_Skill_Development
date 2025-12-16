@@ -11,13 +11,19 @@ import os
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ======================
-# 🔐 SECURITY (FROM GITHUB SECRETS)
+# 🔐 SECURITY (AZURE ENV VARS)
 # ======================
 SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY")
 
 DEBUG = os.environ.get("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "*").split(",")
+ALLOWED_HOSTS = os.environ.get("ALLOWED_HOSTS", "").split(",")
+
+CSRF_TRUSTED_ORIGINS = [
+    f"https://{host}" for host in ALLOWED_HOSTS if host
+]
+
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # ======================
 # APPLICATIONS
@@ -40,6 +46,8 @@ INSTALLED_APPS = [
 # ======================
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -48,6 +56,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+# ======================
+# URLS / TEMPLATES
+# ======================
 ROOT_URLCONF = 'ai_roadmap_app.urls'
 
 TEMPLATES = [
@@ -68,7 +79,7 @@ TEMPLATES = [
 WSGI_APPLICATION = 'ai_roadmap_app.wsgi.application'
 
 # ======================
-# DATABASE
+# DATABASE (SQLite OK FOR F1)
 # ======================
 DATABASES = {
     'default': {
@@ -96,10 +107,12 @@ USE_I18N = True
 USE_TZ = True
 
 # ======================
-# STATIC & MEDIA
+# STATIC & MEDIA (AZURE FIX)
 # ======================
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [BASE_DIR / "static"]
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
+STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / "media"
@@ -111,7 +124,7 @@ LOGIN_REDIRECT_URL = 'chat'
 LOGOUT_REDIRECT_URL = 'login'
 
 # ======================
-# EMAIL (FROM GITHUB SECRETS)
+# EMAIL (AZURE ENV VARS)
 # ======================
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 EMAIL_HOST = "smtp.gmail.com"
