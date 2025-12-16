@@ -1,30 +1,46 @@
+import os
 import json
 import voyageai
 from pinecone import Pinecone
 from openai import OpenAI
 
 # ---------------------------
-# CONFIG
+# CONFIG (FROM AZURE ENV VARS)
 # ---------------------------
 
-PINECONE_API_KEY = "pcsk_5QEXYN_Er83FzNCWsPNRuZwBZJa6jCvRGENPm492YSnGKdyd2CJAbGYKSxjCcyqHEbbsF1"
-INDEX_HOST = "https://roadmaps-index-1sn1m1n.svc.aped-4627-b74a.pinecone.io"
-NAMESPACE = "roadmaps"
+PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
+PINECONE_INDEX_HOST = os.environ.get("PINECONE_INDEX_HOST")
+PINECONE_NAMESPACE = os.environ.get("PINECONE_NAMESPACE", "roadmaps")
 
-VOYAGE_API_KEY = "pa-XblgTCTX_tytboiRIDrrUvOLprsbYml74761hDsqgHm"
+VOYAGE_API_KEY = os.environ.get("VOYAGE_API_KEY")
 
-HF_API_KEY = "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"
-HF_BASE_URL = "https://z3nwkrihzjv9d9iv.us-east4.gcp.endpoints.huggingface.cloud/v1"
-HF_MODEL = "ganeshaMD/roadmap-ai"
+HF_API_KEY = os.environ.get("HF_API_KEY")
+HF_BASE_URL = os.environ.get("HF_BASE_URL")
+HF_MODEL = os.environ.get("HF_MODEL", "ganeshaMD/roadmap-ai")
 
-TOP_K = 5
+TOP_K = int(os.environ.get("TOP_K", 5))
+
+
+# ---------------------------
+# VALIDATION (OPTIONAL BUT SAFE)
+# ---------------------------
+
+if not all([
+    PINECONE_API_KEY,
+    PINECONE_INDEX_HOST,
+    VOYAGE_API_KEY,
+    HF_API_KEY,
+    HF_BASE_URL
+]):
+    raise RuntimeError("❌ One or more required environment variables are missing")
+
 
 # ---------------------------
 # INIT CLIENTS
 # ---------------------------
 
 pc = Pinecone(api_key=PINECONE_API_KEY)
-index = pc.Index(host=INDEX_HOST)
+index = pc.Index(host=PINECONE_INDEX_HOST)
 
 vo = voyageai.Client(api_key=VOYAGE_API_KEY)
 
@@ -63,13 +79,13 @@ def retrieve_context(query: str):
         results = index.query(
             vector=vector,
             top_k=TOP_K,
-            namespace=NAMESPACE,
+            namespace=PINECONE_NAMESPACE,
             include_metadata=True
         )
 
         contexts = []
         for match in results.matches:
-            if "text" in match.metadata:
+            if match.metadata and "text" in match.metadata:
                 contexts.append(match.metadata["text"])
             else:
                 contexts.append(json.dumps(match.metadata))
@@ -110,42 +126,25 @@ Generate a COMPLETE, DAY-WISE roadmap in a flowchart-style sequence. The roadmap
 - What to practice
 - Expected outcomes
 - Mini tasks or exercises
-- Progression logic (each day builds on the previous)
+- Progression logic
 
 STRICT FORMAT RULES:
 - NO asterisks (*)
-- NO markdown (#, **, etc.)
+- NO markdown
 - NO bold/italics
-- NO fancy formatting symbols
-- Output MUST be clean plain text only
+- Plain text only
 
-YOUR OUTPUT MUST FOLLOW THIS EXACT STRUCTURE:
+STRUCTURE:
 
 Day 1 → Main Topic
-  Detailed explanation of what the learner should focus on.
-  List of subtopics to cover.
-  Tools to install or use.
-  Concepts to understand.
-  Mini tasks to complete.
-  End-of-day outcome.
+  Explanation
+  Subtopics
+  Tools
+  Concepts
+  Mini tasks
+  Outcome
 
-Day 2 → Next Main Topic
-  Detailed explanation.
-  Subtopics.
-  Tools.
-  Tasks.
-  Concepts.
-  Outcome.
-
-Continue like this for as many days as needed. Each day should feel like a full lesson plan.
-
-ADDITIONAL RULES:
-- Make the roadmap extremely clear and easy to follow.
-- Include ALL important concepts, even advanced ones when necessary.
-- Each day must include actionable tasks (e.g., "Build a small login page", "Write 10 SQL queries", etc.)
-- Maintain sequential flow so the learner progresses logically.
-- Use simple, readable language.
-- The final output must be long, detailed, and structured.
+Continue for all days.
 
 RAG CONTEXT:
 {context_text}
@@ -153,16 +152,14 @@ RAG CONTEXT:
 USER QUESTION:
 {query}
 
-Now generate the complete, highly detailed, day-wise roadmap:
+Generate the full roadmap:
 """
-
 
     try:
         resp = hf_client.chat.completions.create(
             model=HF_MODEL,
             messages=[{"role": "user", "content": prompt}]
         )
-
         return resp.choices[0].message.content
 
     except Exception as e:
@@ -178,9 +175,7 @@ def rag_answer(query: str):
     try:
         context_blocks = retrieve_context(query)
         context = format_context(context_blocks)
-
         answer = generate_answer(query, context)
-
         return answer
 
     except Exception as e:
