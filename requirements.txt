@@ -44,3 +44,5 @@ PyYAML==6.0.3
 
 gunicorn
 whitenoise
+beautifulsoup4
+lxml
