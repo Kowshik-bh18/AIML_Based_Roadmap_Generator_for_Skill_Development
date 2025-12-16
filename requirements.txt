@@ -2,7 +2,7 @@
 Django==5.2.8
 djangorestframework==3.16.1
 
-# ---- RAG / Embeddings ----
+
 openai==2.8.1
 voyageai==0.3.5       # If using Voyage embeddings for RAG
 huggingface_hub==1.1.5
