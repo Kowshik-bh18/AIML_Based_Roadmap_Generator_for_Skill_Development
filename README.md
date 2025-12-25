@@ -1,4 +1,4 @@
-# 🚀 AIML-Based Roadmap Generator for Skill Development
+# AIML-Based Roadmap Generator for Skill Development
 
 <div align="center">
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
@@ -19,7 +19,7 @@
 
 ---
 
-## 📌 Table of Contents
+## Table of Contents
 
 * [Features](#features)
 * [Tech Stack](#tech-stack)
@@ -35,7 +35,7 @@
 
 ## ✨ Features
 
-### 🧠 AI-Powered Learning
+### AI-Powered Learning
 
 * Personalized **skill roadmaps** using LLMs
 * **RAG (Retrieval Augmented Generation)** for accurate responses
@@ -43,32 +43,32 @@
 * AI-powered **NotebookLM-like document assistant**
 * Custom query answering using **Mistral 7B via Ollama**
 
-### 🧾 User System
+###  User System
 
 * User authentication (Login/Register/Guest mode)
 * Premium subscription system with admin approval
 * Request limits for free users
 
-### 💬 Smart Chat System
+### Smart Chat System
 
 * Persistence chat memory
 * Export chats as **PDF / JSON / TXT / PPTX**
 * Notebook file upload + intelligent document analysis
 
-### 🎨 UI/UX
+### UI/UX
 
 * Modern Bootstrap UI
 * Smooth animations
 * Dark mode support
 
-### ☁ Deployment
+### Deployment
 
 * Backend deployed on **PythonAnywhere**
 * AI/RAG backend ready for Hugging Face Space/Ollama local server
 
 ---
 
-## 🧩 Tech Stack
+## Tech Stack
 
 ### **Backend**
 
@@ -97,7 +97,7 @@
 
 ---
 
-## 🧠 AIML Architecture
+## AIML Architecture
 
 ```
 User → Query → Embedding Model → Pinecone Vector DB → Relevant Chunks → LLM (Mistral 7B) → Final Answer
@@ -114,7 +114,7 @@ Flow:
 
 ---
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 AIML_Based_Roadmap_Generator_for_Skill_Development/
@@ -134,7 +134,7 @@ AIML_Based_Roadmap_Generator_for_Skill_Development/
 
 ---
 
-## 🛠 Installation
+## Installation
 
 ### Prerequisites
 
@@ -184,7 +184,7 @@ PINECONE_INDEX_NAME=roadmap-index
 
 ---
 
-## 🚀 Usage
+## Usage
 
 * Visit web app
 * Create account or login as guest
@@ -194,7 +194,7 @@ PINECONE_INDEX_NAME=roadmap-index
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Want to improve this project?
 
@@ -205,7 +205,7 @@ Want to improve this project?
 
 ---
 
-## 👥 Contributors
+## Contributors
 
 <div align="center">
   <table>
@@ -213,17 +213,17 @@ Want to improve this project?
       <td align="center">
         <img src="https://github.com/Kowshik-bh18.png" width="100px;" />
         <br><b>Kowshik BH</b><br>
-        <a href="https://github.com/Kowshik-bh18">🚀 Developer</a>
+        <a href="https://github.com/Kowshik-bh18">Developer</a>
       </td>
       <td align="center">
         <img src="https://github.com/madhusudhan-31.png" width="100px;" />
         <br><b>Madhu Sudhan</b><br>
-        <a href="https://github.com/madhusudhan-31">💻 Contributor</a>
+        <a href="https://github.com/madhusudhan-31">Contributor</a>
       </td>
       <td align="center">
         <img src="https://github.com/MDGanesha.png" width="100px;" />
         <br><b>MD Ganesha</b><br>
-        <a href="https://github.com/MDGanesha">🔧 Contributor</a>
+        <a href="https://github.com/MDGanesha">Contributor</a>
       </td>
     </tr>
   </table>
@@ -231,7 +231,7 @@ Want to improve this project?
 
 ---
 
-## 📞 Contact
+## Contact
 
 <div align="center">
 
