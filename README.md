@@ -1,19 +1,51 @@
 <div align="center">
-
-# 🚀 AI-Powered Skill Development Roadmap Generator
-
-[![Django](https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white)](https://www.djangoproject.com/)
-[![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![Docker](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
-[![HuggingFace](https://img.shields.io/badge/HuggingFace-FFD21E?style=for-the-badge&logo=huggingface&logoColor=black)](https://huggingface.co/)
-
-### *An intelligent AI-powered platform for personalized learning roadmaps using RAG, Vector Databases, and Large Language Models*
-
-[🌐 Live Demo](https://rmpai.pythonanywhere.com/) • [📧 Contact](#-contact) • [⭐ Star this repo](https://github.com/Kowshik-bh18/AIML_Based_Roadmap_Generator_for_Skill_Development)
-
+  <h1>AIML-Based Roadmap Generator for Skill Development</h1>
 </div>
 
+
+<div align="center">
+  <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
+  <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
+  <img src="https://img.shields.io/badge/LLM-RAG-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Endee-Vector_DB-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Docker-Containerized-blue?style=for-the-badge&logo=docker" />
+  <img src="https://img.shields.io/badge/HuggingFace-Models-yellow?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Ollama-Mistral_7B-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
+</div>
+
+<div align="center">
+  <h3>
+    An intelligent AI-powered personalized roadmap generator designed for students,
+    professionals, and learners using Retrieval Augmented Generation (RAG),
+    Vector Databases, Large Language Models, and AI-driven document assistance.
+  </h3>
+
+  <p>
+    Built using Django, Python, Endee Vector Database (Docker),
+    Sentence Transformers, RAG-based roadmap generation chatbot,
+    NotebookLM-style document assistant, authentication & subscription system,
+    admin approval workflow, automated email notifications,
+    and LLM integration via API/local deployment.
+    Deployed on PythonAnywhere.
+  </p>
+
+  <br>
+
+  <a href="https://rmpai.pythonanywhere.com/" style="font-size:22px; font-weight:bold;">
+     Live Demo
+  </a>
+
+  <p style="margin-top:10px; font-size:14px;">
+    Note: Live demo requires the AI endpoint to be active.
+    If it is not responding, please ping me using the contact details below —
+    I’ll start the endpoint so you can experience the full features.
+  </p>
+</div>
+
+
 ---
+
 
 ## 📋 Table of Contents
 
@@ -35,21 +67,19 @@
 
 The **AI-Powered Skill Development Roadmap Generator** is an intelligent learning platform designed for students, professionals, and lifelong learners. It leverages cutting-edge AI technologies including Retrieval Augmented Generation (RAG), Vector Databases, and Large Language Models to create personalized, context-aware learning pathways.
 
-### 💡 What Makes This Special?
+### What Makes This Special?
 
-- **🧠 RAG-Powered Intelligence**: Context-aware responses using advanced retrieval techniques
-- **📚 NotebookLM-Style Assistant**: Analyze and chat with your documents and study materials
-- **🎯 Personalized Roadmaps**: Day-wise structured learning paths tailored to your goals
-- **🔒 Secure & Scalable**: Production-ready with authentication, subscriptions, and admin workflows
-- **🐳 Containerized**: Docker-based vector database for consistent deployment
-
-> **Note**: The live demo requires an active AI endpoint. If unresponsive, please contact me to activate it.
+- **RAG-Powered Intelligence**: Context-aware responses using advanced retrieval techniques
+- **NotebookLM-Style Assistant**: Analyze and chat with your documents and study materials
+- **Personalized Roadmaps**: Day-wise structured learning paths tailored to your goals
+- **Secure & Scalable**: Production-ready with authentication, subscriptions, and admin workflows
+- **Containerized**: Docker-based vector database for consistent deployment
 
 ---
 
-## ✨ Key Features
+##  Key Features
 
-### 🤖 AI-Powered Learning
+###  AI-Powered Learning
 
 | Feature | Description |
 |---------|-------------|
@@ -60,44 +90,44 @@ The **AI-Powered Skill Development Roadmap Generator** is an intelligent learnin
 | **Flexible LLM Integration** | Support for local (Mistral via Ollama) and remote LLM endpoints |
 | **Semantic Embeddings** | Advanced understanding using Sentence Transformers |
 
-### 👥 User Management
+### User Management
 
-- ✅ Secure authentication (Login/Register/Guest mode)
-- 💎 Premium subscription workflow with admin approval
-- 📧 Automated email notifications for:
+-  Secure authentication (Login/Register/Guest mode)
+-  Premium subscription workflow with admin approval
+- Automated email notifications for:
   - Successful registration
   - Subscription status updates
   - Admin alerts for new requests
-- 🎯 Usage limits for free tier users
+- Usage limits for free tier users
 
-### 💬 Intelligent Chat System
+### Intelligent Chat System
 
-- 🧠 Persistent conversation memory
-- 📊 RAG-powered roadmap generation chatbot
-- 📄 Document upload with contextual AI assistance
-- 📤 Export capabilities:
+-  Persistent conversation memory
+- RAG-powered roadmap generation chatbot
+- Document upload with contextual AI assistance
+- Export capabilities:
   - PDF
   - JSON
   - TXT
   - PPTX
 
-### 🛡️ Admin Dashboard
+### Admin Dashboard
 
-- ⚡ Subscription approval/rejection workflow
-- 📊 User activity monitoring
-- 📧 Automated notification system
-- 📈 Analytics and insights
+- Subscription approval/rejection workflow
+- User activity monitoring
+- Automated notification system
+- Analytics and insights
 
-### 🎨 Modern UI/UX
+### Modern UI/UX
 
-- 📱 Fully responsive Bootstrap design
-- ✨ Smooth animations and transitions
-- 🌙 Dark mode support
-- 🎯 Intuitive dashboard layout
+- Fully responsive Bootstrap design
+- Smooth animations and transitions
+- Dark mode support
+- Intuitive dashboard layout
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ### High-Level Architecture
 
@@ -258,34 +288,40 @@ AI Services:
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-### 🔐 Authentication System
+### Authentication System
 ![User Login](screenshots/login-page.png)
 *Secure login interface with guest mode support*
 
-### 💎 Subscription Workflow
+
+### Subscription Workflow
 ![Subscription Request](screenshots/subscription-request.png)
 *Premium subscription request interface*
 
 ![Admin Dashboard](screenshots/admin-dashboard.png)
 *Admin approval dashboard for managing subscriptions*
 
-### 📧 Email Notifications
+
+### Email Notifications
 ![User Notifications](screenshots/user-email-notification.png)
+![User Notifications](screenshots/user-email-notification-1.png.
+![User Notifications](screenshots/user-email-notification-2.png)
 *Automated email notifications for users*
 
 ![Admin Notifications](screenshots/admin-email-notification.png)
 *Admin alert emails for new subscription requests*
 
-### 🗄️ Vector Database
+
+### Vector Database
 ![Endee Dashboard](screenshots/endee-dashboard.png)
 *Endee Vector Database management interface*
 
 ![Docker Setup](screenshots/docker-endee-setup.png)
 *Docker containerization of Endee Vector DB*
 
-### 🤖 AI Features
+
+### AI Features
 ![RAG Chatbot](screenshots/rag-chatbot.png)
 *Intelligent roadmap generation chatbot*
 
@@ -300,7 +336,7 @@ AI Services:
 
 ---
 
-## 🚀 Installation Guide
+## Installation Guide
 
 ### Prerequisites
 
@@ -455,7 +491,7 @@ python manage.py runserver
 
 ---
 
-## 💻 Usage
+## Usage
 
 ### For Students & Learners
 
@@ -483,7 +519,7 @@ python manage.py runserver
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 AIML_Based_Roadmap_Generator_for_Skill_Development/
@@ -525,7 +561,7 @@ AIML_Based_Roadmap_Generator_for_Skill_Development/
 
 ---
 
-## 🤝 Contributing
+## Contributing
 
 Contributions are welcome! Follow these steps:
 
@@ -563,15 +599,15 @@ Contributions are welcome! Follow these steps:
 
 ### Contribution Guidelines
 
-- 📝 Follow existing code style
-- ✅ Test your changes thoroughly
-- 📚 Update documentation as needed
-- 🐛 Report bugs via GitHub Issues
-- 💡 Suggest features in Discussions
+- Follow existing code style
+- Test your changes thoroughly
+- Update documentation as needed
+- Report bugs via GitHub Issues
+- Suggest features in Discussions
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 This project represents an evolution of my earlier AI roadmap generator work. I am grateful to my friends and collaborators who contributed during the initial development phases, particularly in:
 
@@ -592,7 +628,7 @@ This journey has been a collaborative learning experience, and I'm grateful for 
 
 ---
 
-## 👨‍💻 Contributors
+## Contributors
 
 <div align="center">
   <table>
@@ -604,7 +640,7 @@ This journey has been a collaborative learning experience, and I'm grateful for 
           <sub><b>Kowshik BH</b></sub>
         </a>
         <br />
-        <sub>Lead Developer</sub>
+        <sub>Developer</sub>
       </td>
     </tr>
   </table>
@@ -634,7 +670,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 <div align="center">
 
-### ⭐ If you find this project helpful, please consider starring the repository!
+### If you find this project helpful, please consider starring the repository!
 
 **Made with ❤️ by [Kowshik BH](https://github.com/Kowshik-bh18)**
 
