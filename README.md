@@ -1,4 +1,7 @@
-   #   AIML-Based Roadmap Generator for Skill Development
+ <div align="center">
+  <h1>AIML-Based Roadmap Generator for Skill Development</h1>
+</div>
+
 
 <div align="center">
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
