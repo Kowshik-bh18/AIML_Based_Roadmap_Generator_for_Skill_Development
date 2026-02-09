@@ -112,6 +112,38 @@
   - HuggingFace endpoints (optional)  
 * Flexible architecture supporting multiple vector DBs and LLM providers  
 
+---
+
+## 📸 Project Screenshots
+
+### 🔐 User Login Page
+<img src="screenshots/login-page.png" width="900"/>
+
+### 💎 Subscription Request System
+<img src="screenshots/subscription-request.png" width="900"/>
+
+### Subscription Approval System
+<img src="screenshots/admin-dashboard.png" width="800"/>
+
+### 📧 User Email Notification (Registration / Subscription Status)
+<img src="screenshots/user-email-notification.png" width="900"/>
+
+### 🛠️ Admin Email Notification for Approval
+<img src="screenshots/admin-email-notification.png" width="900"/>
+
+### Endee Vector DB Dashboard
+<img src="screenshots/endee-dashboard.png" width="800"/>
+
+### 🐳 Docker + Endee Vector Database Setup
+<img src="screenshots/docker-endee-setup.png" width="900"/>
+
+### 🤖 RAG Chatbot Roadmap Generator
+<img src="screenshots/rag-chatbot.png" width="900"/>
+
+### 📓 NotebookLM-Style Document Assistant
+<img src="screenshots/notebooklm-dashboard.png" width="900"/>
+<img src="screenshots/notebooklm-feature.png" width="900"/>
+<img src="screenshots/notebooklm-feature-1.png" width="900"/>
 
 ---
 
