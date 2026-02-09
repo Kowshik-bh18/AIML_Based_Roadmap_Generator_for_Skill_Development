@@ -648,7 +648,7 @@ This journey has been a collaborative learning experience, and I'm grateful for 
 
 ---
 
-## 📧 Contact
+##  Contact
 
 <div align="center">
 
