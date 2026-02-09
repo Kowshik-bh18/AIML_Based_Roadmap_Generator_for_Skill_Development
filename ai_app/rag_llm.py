@@ -1,54 +1,31 @@
-import os
 import json
-import voyageai
-from pinecone import Pinecone
-from openai import OpenAI
+import requests
+from endee import Endee
+from sentence_transformers import SentenceTransformer
 
 # ---------------------------
-# CONFIG (FROM AZURE ENV VARS)
+# CONFIG
 # ---------------------------
 
-PINECONE_API_KEY = os.environ.get("PINECONE_API_KEY")
-PINECONE_INDEX_HOST = os.environ.get("PINECONE_INDEX_HOST")
-PINECONE_NAMESPACE = os.environ.get("PINECONE_NAMESPACE", "roadmaps")
+ENDEE_BASE_URL = "http://localhost:9090/api/v1"
+INDEX_NAME = "RoadmapAI"
 
-VOYAGE_API_KEY = os.environ.get("VOYAGE_API_KEY")
+# NGROK endpoint from Colab
+LLM_API_URL = "https://recent-eura-undesignedly.ngrok-free.dev/generate"
 
-HF_API_KEY = os.environ.get("HF_API_KEY")
-HF_BASE_URL = os.environ.get("HF_BASE_URL")
-HF_MODEL = os.environ.get("HF_MODEL", "ganeshaMD/roadmap-ai")
-
-TOP_K = int(os.environ.get("TOP_K", 5))
-
-
-# ---------------------------
-# VALIDATION (OPTIONAL BUT SAFE)
-# ---------------------------
-
-if not all([
-    PINECONE_API_KEY,
-    PINECONE_INDEX_HOST,
-    VOYAGE_API_KEY,
-    HF_API_KEY,
-    HF_BASE_URL
-]):
-    raise RuntimeError("❌ One or more required environment variables are missing")
-
+TOP_K = 5
 
 # ---------------------------
 # INIT CLIENTS
 # ---------------------------
 
-pc = Pinecone(api_key=PINECONE_API_KEY)
-index = pc.Index(host=PINECONE_INDEX_HOST)
+# Endee Vector DB
+client = Endee()
+client.set_base_url(ENDEE_BASE_URL)
+index = client.get_index(INDEX_NAME)
 
-vo = voyageai.Client(api_key=VOYAGE_API_KEY)
-
-hf_client = OpenAI(
-    base_url=HF_BASE_URL,
-    api_key=HF_API_KEY
-)
-
+# Embedding model (local)
+embed_model = SentenceTransformer("BAAI/bge-small-en")
 
 # ---------------------------
 # EMBEDDING FUNCTION
@@ -56,52 +33,45 @@ hf_client = OpenAI(
 
 def embed_query(text: str):
     try:
-        res = vo.embed(
-            model="voyage-3",
-            texts=[text]
-        )
-        return res.embeddings[0]
+        return embed_model.encode(text).tolist()
     except Exception as e:
         print("Embedding error:", e)
         return None
 
 
 # ---------------------------
-# PINECONE RETRIEVAL
+# VECTOR SEARCH (RAG RETRIEVAL)
 # ---------------------------
 
 def retrieve_context(query: str):
+
     vector = embed_query(query)
     if vector is None:
         return []
 
     try:
-        results = index.query(
-            vector=vector,
-            top_k=TOP_K,
-            namespace=PINECONE_NAMESPACE,
-            include_metadata=True
-        )
+        results = index.query(vector=vector, top_k=TOP_K)
 
         contexts = []
-        for match in results.matches:
-            if match.metadata and "text" in match.metadata:
-                contexts.append(match.metadata["text"])
+        for item in results:
+            if "meta" in item and "text" in item["meta"]:
+                contexts.append(item["meta"]["text"])
             else:
-                contexts.append(json.dumps(match.metadata))
+                contexts.append(json.dumps(item))
 
         return contexts
 
     except Exception as e:
-        print("Pinecone Query Error:", e)
+        print("Endee Query Error:", e)
         return []
 
 
 # ---------------------------
-# FORMAT CONTEXT
+# CONTEXT FORMAT
 # ---------------------------
 
 def format_context(context_blocks):
+
     if not context_blocks:
         return "No useful context retrieved."
 
@@ -109,7 +79,7 @@ def format_context(context_blocks):
 
 
 # ---------------------------
-# HF LLM GENERATION
+# LLM CALL (NGROK ENDPOINT)
 # ---------------------------
 
 def generate_answer(query: str, context_text: str):
@@ -126,25 +96,42 @@ Generate a COMPLETE, DAY-WISE roadmap in a flowchart-style sequence. The roadmap
 - What to practice
 - Expected outcomes
 - Mini tasks or exercises
-- Progression logic
+- Progression logic (each day builds on the previous)
 
 STRICT FORMAT RULES:
 - NO asterisks (*)
-- NO markdown
+- NO markdown (#, **, etc.)
 - NO bold/italics
-- Plain text only
+- NO fancy formatting symbols
+- Output MUST be clean plain text only
 
-STRUCTURE:
+YOUR OUTPUT MUST FOLLOW THIS EXACT STRUCTURE:
 
 Day 1 → Main Topic
-  Explanation
-  Subtopics
-  Tools
-  Concepts
-  Mini tasks
-  Outcome
+  Detailed explanation of what the learner should focus on.
+  List of subtopics to cover.
+  Tools to install or use.
+  Concepts to understand.
+  Mini tasks to complete.
+  End-of-day outcome.
 
-Continue for all days.
+Day 2 → Next Main Topic
+  Detailed explanation.
+  Subtopics.
+  Tools.
+  Tasks.
+  Concepts.
+  Outcome.
+
+Continue like this for as many days as needed. Each day should feel like a full lesson plan.
+
+ADDITIONAL RULES:
+- Make the roadmap extremely clear and easy to follow.
+- Include ALL important concepts, even advanced ones when necessary.
+- Each day must include actionable tasks (e.g., "Build a small login page", "Write 10 SQL queries", etc.)
+- Maintain sequential flow so the learner progresses logically.
+- Use simple, readable language.
+- The final output must be long, detailed, and structured.
 
 RAG CONTEXT:
 {context_text}
@@ -152,19 +139,21 @@ RAG CONTEXT:
 USER QUESTION:
 {query}
 
-Generate the full roadmap:
+Now generate the complete, highly detailed, day-wise roadmap:
 """
 
     try:
-        resp = hf_client.chat.completions.create(
-            model=HF_MODEL,
-            messages=[{"role": "user", "content": prompt}]
+        response = requests.post(
+            LLM_API_URL,
+            json={"query": prompt},
+            timeout=600
         )
-        return resp.choices[0].message.content
+
+        return response.json().get("response", "No response from LLM.")
 
     except Exception as e:
-        print("LLM Error:", e)
-        return "Error generating LLM answer."
+        print("LLM API Error:", e)
+        return "LLM connection failed."
 
 
 # ---------------------------
@@ -172,11 +161,22 @@ Generate the full roadmap:
 # ---------------------------
 
 def rag_answer(query: str):
+
     try:
         context_blocks = retrieve_context(query)
         context = format_context(context_blocks)
+
         answer = generate_answer(query, context)
         return answer
 
     except Exception as e:
         return f"[RAG SYSTEM ERROR] {e}"
+
+
+# ---------------------------
+# TEST RUN
+# ---------------------------
+
+if __name__ == "__main__":
+    q = input("Ask something: ")
+    print(rag_answer(q))
