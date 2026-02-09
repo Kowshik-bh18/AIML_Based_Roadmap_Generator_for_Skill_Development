@@ -13,7 +13,7 @@ from django.utils import timezone
 
 from .forms import RegisterForm
 from .models import Chat, UserProfile, GuestSession, Subscription
-from .rag_llm import rag_answer
+from .rag_endee import rag_answer
 
 from django.core.mail import EmailMultiAlternatives
 from email.mime.image import MIMEImage
