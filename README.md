@@ -255,20 +255,20 @@ python manage.py runserver
 
 ### Step 4: Setup Endee Vector Database (Docker)
 
-# This project uses Endee OSS Vector Database for RAG storage instead of Pinecone.
+This project uses Endee OSS Vector Database for RAG storage instead of Pinecone.
 
 # Substeps:
 
-# Clone Endee Repository
+Clone Endee Repository
 
 git clone [https://github.com/endee-ai/endee.git](https://github.com/endee-ai/endee.git)
 cd endee
 
-# Build Docker Image
+Build Docker Image
 
 docker build -t endee-local .
 
-# Run Container With Persistent Volume
+Run Container With Persistent Volume
 
 docker run -d 
 --name endee-db 
@@ -276,18 +276,18 @@ docker run -d
 -v endee-data:/data 
 endee-local
 
-# Volume ensures:
+Volume ensures:
 
-# - Persistent vector storage
+ - Persistent vector storage
 
-# - No data loss on restart
+ - No data loss on restart
 
-# - Local RAG database access
+ - Local RAG database access
 
 Base API URL:
 [http://localhost:9090/api/v1](http://localhost:9090/api/v1)
 
-# Verify Container
+Verify Container
 
 docker ps
 
@@ -305,35 +305,35 @@ ollama run mistral
 
 ### Step 6: Run Project & Test RAG Pipeline
 
-# Start Django server
+Start Django server
 
 python manage.py runserver
 
-# Open in browser
+Open in browser
 
 [http://127.0.0.1:8000/](http://127.0.0.1:8000/)
 
-# Login / Register:
+ Login / Register:
 
 * Create account or login as guest
 * Access roadmap generator chat
 * Upload notebook documents (NotebookLM feature)
 * Test RAG roadmap generation
 
-# Ensure These Services Are Running:
+ Ensure These Services Are Running:
 
 ✔ Django server running
 ✔ Endee Docker container active
 ✔ LLM endpoint (Colab / local model) running
 
-# Quick API Test (Optional)
+ Quick API Test (Optional)
 
 curl [http://localhost:9090/api/v1/health](http://localhost:9090/api/v1/health)
 
 Expected Output:
 {"status":"ok"}
 
-# If roadmap generation fails:
+ If roadmap generation fails:
 
 * Check Endee container → docker ps
 * Check LLM endpoint → ngrok/colab running
