@@ -33,7 +33,7 @@
   <br>
 
   <a href="https://rmpai.pythonanywhere.com/" style="font-size:22px; font-weight:bold;">
-    🔗 Live Demo
+     Live Demo
   </a>
 
   <p style="margin-top:10px; font-size:14px;">
@@ -60,7 +60,7 @@
 
 ---
 
-## ✨ Features
+## Features
 
 ### AI-Powered Learning
 
@@ -119,31 +119,31 @@
 
 ## 📸 Project Screenshots
 
-### 🔐 User Login Page
+###  User Login Page
 <img src="screenshots/login-page.png" width="900"/>
 
-### 💎 Subscription Request System
+### Subscription Request System
 <img src="screenshots/subscription-request.png" width="900"/>
 
 ### Subscription Approval System
 <img src="screenshots/admin-dashboard.png" width="800"/>
 
-### 📧 User Email Notification (Registration / Subscription Status)
+### User Email Notification (Registration / Subscription Status)
 <img src="screenshots/user-email-notification.png" width="900"/>
 
-### 🛠️ Admin Email Notification for Approval
+### Admin Email Notification for Approval
 <img src="screenshots/admin-email-notification.png" width="900"/>
 
 ### Endee Vector DB Dashboard
 <img src="screenshots/endee-dashboard.png" width="800"/>
 
-### 🐳 Docker + Endee Vector Database Setup
+### Docker + Endee Vector Database Setup
 <img src="screenshots/docker-endee-setup.png" width="900"/>
 
-### 🤖 RAG Chatbot Roadmap Generator
+### RAG Chatbot Roadmap Generator
 <img src="screenshots/rag-chatbot.png" width="900"/>
 
-### 📓 NotebookLM-Style Document Assistant
+### NotebookLM-Style Document Assistant
 <img src="screenshots/notebooklm-dashboard.png" width="900"/>
 <img src="screenshots/notebooklm-feature.png" width="900"/>
 <img src="screenshots/notebooklm-feature-1.png" width="900"/>
@@ -259,16 +259,16 @@ python manage.py runserver
 
 # Substeps:
 
-#### Clone Endee Repository
+# Clone Endee Repository
 
 git clone [https://github.com/endee-ai/endee.git](https://github.com/endee-ai/endee.git)
 cd endee
 
-#### Build Docker Image
+# Build Docker Image
 
 docker build -t endee-local .
 
-#### Run Container With Persistent Volume
+# Run Container With Persistent Volume
 
 docker run -d 
 --name endee-db 
@@ -287,7 +287,7 @@ endee-local
 Base API URL:
 [http://localhost:9090/api/v1](http://localhost:9090/api/v1)
 
-#### Verify Container
+# Verify Container
 
 docker ps
 
