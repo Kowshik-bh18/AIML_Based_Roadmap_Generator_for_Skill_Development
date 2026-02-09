@@ -47,7 +47,7 @@
 ---
 
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
@@ -63,7 +63,7 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
 The **AI-Powered Skill Development Roadmap Generator** is an intelligent learning platform designed for students, professionals, and lifelong learners. It leverages cutting-edge AI technologies including Retrieval Augmented Generation (RAG), Vector Databases, and Large Language Models to create personalized, context-aware learning pathways.
 
@@ -236,7 +236,7 @@ User Input → Preprocessing → Embedding Model
 
 ---
 
-## 🛠️ Technology Stack
+## Technology Stack
 
 ### Backend
 
@@ -305,7 +305,7 @@ AI Services:
 
 ### Email Notifications
 ![User Notifications](screenshots/user-email-notification.png)
-![User Notifications](screenshots/user-email-notification-1.png.
+![User Notifications](screenshots/user-email-notification-1.png).
 ![User Notifications](screenshots/user-email-notification-2.png)
 *Automated email notifications for users*
 
@@ -662,7 +662,7 @@ This journey has been a collaborative learning experience, and I'm grateful for 
 
 ---
 
-## 📄 License
+## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
