@@ -1,248 +1,298 @@
-# AIML-Based Roadmap Generator for Skill Development
+# AIML-Based Roadmap Generator for Skill Development (Endee + RAG Version)
 
 <div align="center">
   <img src="https://img.shields.io/badge/Django-092E20?style=for-the-badge&logo=django&logoColor=white" />
   <img src="https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white" />
-  <img src="https://img.shields.io/badge/LLM-RAG-blue?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Pinecone-Vector_DB-purple?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/HuggingFace-Models-yellow?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Ollama-Mistral_7B-orange?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
-</div>
-
-<div align="center">
-  <h3>An intelligent, AI-powered personalized roadmap generator designed for students, professionals, and learners using RAG, Vector Databases, and LLMs.</h3>
-  <p>Built using Django, Python, Pinecone, Hugging Face, Ollama (Mistral-7B), and deployed on PythonAnywhere.</p>
-  <br>
-  <a href="https://rmpai.pythonanywhere.com/" style="font-size:22px; font-weight:bold;">🔗 Live Demo</a>
+  <img src="https://img.shields.io/badge/RAG-LLM-blue?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Endee-Vector_DB-purple?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Docker-Containerized-blue?style=for-the-badge&logo=docker" />
+  <img src="https://img.shields.io/badge/Bootstrap-Frontend-563D7C?style=for-the-badge&logo=bootstrap" />
 </div>
 
 ---
 
-## Table of Contents
+## Overview
 
-* [Features](#features)
-* [Tech Stack](#tech-stack)
-* [AI/ML Architecture](#aiml-architecture)
-* [Project Structure](#project-structure)
-* [Installation](#installation)
-* [Usage](#usage)
-* [Contributing](#contributing)
-* [Contributors](#contributors)
-* [Contact](#contact)
+This project is an AI-powered personalized learning roadmap generator built using Retrieval-Augmented Generation (RAG), Large Language Models, and Vector Databases.
+It helps students, professionals, and learners generate structured learning roadmaps, analyze documents, and interact with AI-driven assistants.
+
+Originally implemented using Pinecone, this final evaluation version uses the Endee vector database deployed via Docker as required for project evaluation.
 
 ---
 
-## ✨ Features
+## Live Demo
 
-### AI-Powered Learning
-
-* Personalized **skill roadmaps** using LLMs
-* **RAG (Retrieval Augmented Generation)** for accurate responses
-* Vector search using **Pinecone**
-* AI-powered **NotebookLM-like document assistant**
-* Custom query answering using **Mistral 7B via Ollama**
-
-###  User System
-
-* User authentication (Login/Register/Guest mode)
-* Premium subscription system with admin approval
-* Request limits for free users
-
-### Smart Chat System
-
-* Persistence chat memory
-* Export chats as **PDF / JSON / TXT / PPTX**
-* Notebook file upload + intelligent document analysis
-
-### UI/UX
-
-* Modern Bootstrap UI
-* Smooth animations
-* Dark mode support
-
-### Deployment
-
-* Backend deployed on **PythonAnywhere**
-* AI/RAG backend ready for Hugging Face Space/Ollama local server
+[https://rmpai.pythonanywhere.com/](https://rmpai.pythonanywhere.com/)
 
 ---
 
-## Tech Stack
+## Core Features
 
-### **Backend**
+### AI / RAG Capabilities
+
+* Personalized AI-generated skill roadmaps
+* Retrieval-Augmented Generation (RAG) architecture
+* Endee vector database for semantic search
+* Local embedding models for document understanding
+* NotebookLM-style document assistant
+* Context-aware AI chat responses
+
+---
+
+### User System
+
+* Secure login and registration
+* Premium subscription workflow
+* Admin approval/rejection system
+* Email notifications for:
+
+  * Registration success
+  * Subscription approval/rejection
+  * Admin alerts
+
+---
+
+### AI Chat & Notebook Assistant
+
+* Persistent AI chat history
+* Document upload and analysis
+* Semantic search over uploaded notes
+* Export chat responses (PDF / JSON / TXT / PPTX)
+
+---
+
+### Admin Dashboard
+
+* Subscription approval interface
+* User monitoring
+* Email notification automation
+* Premium request management
+
+---
+
+### Deployment & Infrastructure
+
+* Dockerized Endee vector DB
+* Django backend
+* Bootstrap frontend
+* Local LLM hosting via Colab / API endpoint
+* Production deployment on PythonAnywhere
+
+---
+
+## System Architecture (RAG Pipeline)
+
+User Query
+→ Embedding Model
+→ Endee Vector DB Retrieval
+→ Relevant Context
+→ LLM Generation
+→ Final AI Response
+
+This ensures:
+
+* Contextually accurate answers
+* Reduced hallucinations
+* Domain-aware roadmap generation
+
+---
+
+## Screenshots
+
+### Docker + Vector Database
+
+(Add your images here)
+
+* Docker container running Endee
+* Vector index creation dashboard
+* Vector insertion logs
+
+Example:
+
+```
+![Docker Container](screenshots/docker_container.png)
+![Endee Dashboard](screenshots/endee_dashboard.png)
+![Vector Insert](screenshots/vector_insert.png)
+```
+
+---
+
+### AI Application UI
+
+(Add screenshots)
+
+* Login page
+* Roadmap generator chat
+* RAG chatbot interface
+* NotebookLM document assistant
+
+Example:
+
+```
+![Login](screenshots/login.png)
+![Roadmap Generator](screenshots/roadmap_chat.png)
+![RAG Chatbot](screenshots/rag_chat.png)
+![Notebook Assistant](screenshots/notebook_ai.png)
+```
+
+---
+
+### Subscription & Admin Workflow
+
+(Add screenshots)
+
+* User profile page
+* Subscription request
+* Admin approval dashboard
+* Email notification samples
+
+Example:
+
+```
+![User Profile](screenshots/profile.png)
+![Subscription Request](screenshots/subscription.png)
+![Admin Dashboard](screenshots/admin_dashboard.png)
+![Approval Email](screenshots/email_notification.png)
+```
+
+---
+
+## Technology Stack
+
+### Backend
 
 * Django
-* Python 3
-* REST API
-* Pinecone (Vector DB)
-* RAG Pipeline
-* Ollama Mistral 7B
+* Python
+* REST APIs
+* Endee Vector Database
+* Docker Containerization
 
-### **Frontend**
+### Frontend
 
-* HTML5, CSS3, JavaScript
+* HTML5 / CSS3
 * Bootstrap
+* JavaScript
 
-### **AI / ML**
+### AI/ML Components
 
-* Hugging Face embeddings
-* Mistral 7B (via Ollama)
-* Vector search + retrieval
-
-### **Deployment**
-
-* PythonAnywhere (Live Server)
-* HuggingFace Space (Optional Model Hosting)
+* Sentence Transformers embeddings
+* RAG architecture
+* Local or hosted LLM endpoint
+* Notebook-style AI assistant
 
 ---
 
-## AIML Architecture
+## Installation Guide
+
+### Clone Repository
 
 ```
-User → Query → Embedding Model → Pinecone Vector DB → Relevant Chunks → LLM (Mistral 7B) → Final Answer
+git clone https://github.com/Kowshik-bh18/AIML_Based_Roadmap_Generator_for_Skill_Development.git
+cd AIML_Based_Roadmap_Generator_for_Skill_Development
 ```
 
-Flow:
+---
 
-1. User asks a question
-2. Convert query to embedding
-3. Search Pinecone vector DB
-4. Retrieve top matches
-5. Feed context to Mistral-7B (RAG)
-6. AI produces a structured and accurate answer
+### Create Virtual Environment
+
+```
+python -m venv myenv
+myenv/Scripts/activate
+pip install -r requirements.txt
+```
+
+---
+
+### Run Endee Vector DB (Docker)
+
+```
+docker run -d ^
+  --name endee-db ^
+  -p 9090:8080 ^
+  -v endee-data:/data ^
+  endee-local
+```
+
+This ensures vector data persistence across restarts.
+
+---
+
+### Django Setup
+
+```
+python manage.py makemigrations
+python manage.py migrate
+python manage.py runserver
+```
+
+---
+
+### Configure Environment Variables
+
+Example `.env`:
+
+```
+ENDEE_BASE_URL=http://localhost:9090/api/v1
+EMAIL_HOST_USER=your_email
+EMAIL_HOST_PASSWORD=your_password
+```
 
 ---
 
 ## Project Structure
 
 ```
-AIML_Based_Roadmap_Generator_for_Skill_Development/
-│
-├── ai_app/                 # Main app: roadmap AI, chat, premium
-├── ai_notebook/            # NotebookLM-like AI processing
-├── ai_roadmap_app/         # Django project settings
-├── notebook_files/         # Uploaded documents
-├── static/                 # JS/CSS/Images
-├── media/                  # User uploads
-│
-├── manage.py
-├── requirements.txt
-├── test.py
-└── README.md
+ai_app/
+ai_notebook/
+ai_roadmap_app/
+media/
+static/
+docker/
+notebook_files/
+manage.py
+requirements.txt
+README.md
 ```
 
 ---
 
-## Installation
+## Contribution Workflow
 
-### Prerequisites
-
-* Python 3.10+
-* Git
-* Pinecone API Key
-* HuggingFace Token
-* Ollama installed (for local LLM)
-
-### Step 1: Clone
-
-```bash
-git clone https://github.com/Kowshik-bh18/AIML_Based_Roadmap_Generator_for_Skill_Development.git
-cd AIML_Based_Roadmap_Generator_for_Skill_Development
-```
-
-### Step 2: Virtual Environment
-
-```bash
-python -m venv myenv
-myenv/Scripts/activate
-pip install -r requirements.txt
-```
-
-### Step 3: Django Setup
-
-```bash
-python manage.py makemigrations
-python manage.py migrate
-python manage.py runserver
-```
-
-### Step 4: Configure LLM (Local)
-
-```bash
-ollama run mistral
-```
-
-### Step 5: Pinecone Setup
-
-Add in `.env` or settings:
-
-```
-PINECONE_API_KEY=xxxx
-PINECONE_INDEX_NAME=roadmap-index
-```
-
----
-
-## Usage
-
-* Visit web app
-* Create account or login as guest
-* Chat with Roadmap AI
-* Upload documents for NotebookLM-style responses
-* Upgrade to premium for unlimited usage
-
----
-
-## Contributing
-
-Want to improve this project?
-
-1. Fork repo
-2. Create branch
+1. Fork repository
+2. Create feature branch
 3. Commit changes
-4. Open Pull Request
+4. Submit pull request
 
 ---
 
 ## Contributors
 
-<div align="center">
-  <table>
-    <tr>
-      <td align="center">
-        <img src="https://github.com/Kowshik-bh18.png" width="100px;" />
-        <br><b>Kowshik BH</b><br>
-        <a href="https://github.com/Kowshik-bh18">Developer</a>
-      </td>
-      <td align="center">
-        <img src="https://github.com/madhusudhan-31.png" width="100px;" />
-        <br><b>Madhu Sudhan</b><br>
-        <a href="https://github.com/madhusudhan-31">Contributor</a>
-      </td>
-      <td align="center">
-        <img src="https://github.com/MDGanesha.png" width="100px;" />
-        <br><b>MD Ganesha</b><br>
-        <a href="https://github.com/MDGanesha">Contributor</a>
-      </td>
-    </tr>
-  </table>
-</div>
+Kowshik BH — Lead Developer
+Madhu Sudhan — Contributor
+MD Ganesha — Contributor
 
 ---
 
 ## Contact
 
-<div align="center">
-
-### **Kowshik BH**
-
-[Email](mailto:kowshikbh18@gmail.com) | [LinkedIn](https://www.linkedin.com/in/kowshikbh) | [GitHub](https://github.com/Kowshik-bh18)
-
-</div>
+Email: [kowshikbh18@gmail.com](mailto:kowshikbh18@gmail.com)
+GitHub: [https://github.com/Kowshik-bh18](https://github.com/Kowshik-bh18)
+LinkedIn: [https://linkedin.com/in/kowshikbh](https://linkedin.com/in/kowshikbh)
 
 ---
 
-<div align="center">
-  <h3>⭐ If you like this project, consider starring the repo!</h3>
-</div>
+## Important Note for Evaluators
+
+This repository contains multiple experimental branches.
+
+The final evaluation implementation uses:
+
+* Endee vector database
+* Docker deployment
+* RAG architecture
+
+Please refer to the Endee implementation branch for project evaluation.
+
+---
+
+If you found this project useful, please consider starring the repository.
