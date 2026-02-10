@@ -33,13 +33,13 @@
   <br>
 
   <a href="https://rmpai.pythonanywhere.com/" style="font-size:22px; font-weight:bold;">
-     Live Demo
+    🚀 Live Demo
   </a>
 
   <p style="margin-top:10px; font-size:14px;">
     Note: Live demo requires the AI endpoint to be active.
     If it is not responding, please ping me using the contact details below —
-    I’ll start the endpoint so you can experience the full features.
+    I'll start the endpoint so you can experience the full features.
   </p>
 </div>
 
@@ -49,21 +49,21 @@
 
 ## Table of Contents
 
-- [Overview](#-overview)
-- [Key Features](#-key-features)
-- [System Architecture](#-system-architecture)
-- [Technology Stack](#-technology-stack)
-- [Screenshots](#-screenshots)
-- [Installation Guide](#-installation-guide)
-- [Usage](#-usage)
-- [Project Structure](#-project-structure)
-- [Contributing](#-contributing)
-- [Acknowledgments](#-acknowledgments)
-- [Contact](#-contact)
+- [Overview](#overview)
+- [Key Features](#key-features)
+- [System Architecture](#system-architecture)
+- [Technology Stack](#technology-stack)
+- [Screenshots](#screenshots)
+- [Installation Guide](#installation-guide)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [Contributing](#contributing)
+- [Acknowledgments](#acknowledgments)
+- [Contact](#contact)
 
 ---
 
-##  Overview
+## Overview
 
 The **AI-Powered Skill Development Roadmap Generator** is an intelligent learning platform designed for students, professionals, and lifelong learners. It leverages cutting-edge AI technologies including Retrieval Augmented Generation (RAG), Vector Databases, and Large Language Models to create personalized, context-aware learning pathways.
 
@@ -77,9 +77,9 @@ The **AI-Powered Skill Development Roadmap Generator** is an intelligent learnin
 
 ---
 
-##  Key Features
+## Key Features
 
-###  AI-Powered Learning
+### 🤖 AI-Powered Learning
 
 | Feature | Description |
 |---------|-------------|
@@ -92,20 +92,20 @@ The **AI-Powered Skill Development Roadmap Generator** is an intelligent learnin
 
 ### User Management
 
--  Secure authentication (Login/Register/Guest mode)
--  Premium subscription workflow with admin approval
-- Automated email notifications for:
+- 🔐 Secure authentication (Login/Register/Guest mode)
+- 💎 Premium subscription workflow with admin approval
+- 📧 Automated email notifications for:
   - Successful registration
   - Subscription status updates
   - Admin alerts for new requests
-- Usage limits for free tier users
+- ⏱️ Usage limits for free tier users
 
 ### Intelligent Chat System
 
--  Persistent conversation memory
-- RAG-powered roadmap generation chatbot
-- Document upload with contextual AI assistance
-- Export capabilities:
+- 💬 Persistent conversation memory
+- 🗺️ RAG-powered roadmap generation chatbot
+- 📄 Document upload with contextual AI assistance
+- 📤 Export capabilities:
   - PDF
   - JSON
   - TXT
@@ -113,17 +113,17 @@ The **AI-Powered Skill Development Roadmap Generator** is an intelligent learnin
 
 ### Admin Dashboard
 
-- Subscription approval/rejection workflow
-- User activity monitoring
-- Automated notification system
-- Analytics and insights
+- ✅ Subscription approval/rejection workflow
+- 👥 User activity monitoring
+- 🔔 Automated notification system
+- 📊 Analytics and insights
 
 ### Modern UI/UX
 
-- Fully responsive Bootstrap design
-- Smooth animations and transitions
-- Dark mode support
-- Intuitive dashboard layout
+- 📱 Fully responsive Bootstrap design
+- ✨ Smooth animations and transitions
+- 🌙 Dark mode support
+- 🎨 Intuitive dashboard layout
 
 ---
 
@@ -305,7 +305,7 @@ AI Services:
 
 ### Email Notifications
 ![User Notifications](screenshots/user-email-notification.png)
-![User Notifications](screenshots/user-email-notification-1.png).
+![User Notifications](screenshots/user-email-notification-1.png)
 ![User Notifications](screenshots/user-email-notification-2.png)
 *Automated email notifications for users*
 
@@ -519,7 +519,7 @@ python manage.py runserver
 
 ---
 
-##  Project Structure
+## Project Structure
 
 ```
 AIML_Based_Roadmap_Generator_for_Skill_Development/
@@ -648,7 +648,7 @@ This journey has been a collaborative learning experience, and I'm grateful for 
 
 ---
 
-##  Contact
+## Contact
 
 <div align="center">
 
