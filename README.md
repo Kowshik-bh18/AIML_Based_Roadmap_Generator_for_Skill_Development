@@ -33,7 +33,7 @@
   <br>
 
   <a href="https://rmpai.pythonanywhere.com/" style="font-size:22px; font-weight:bold;">
-    🚀 Live Demo
+     Live Demo
   </a>
 
   <p style="margin-top:10px; font-size:14px;">
@@ -79,7 +79,7 @@ The **AI-Powered Skill Development Roadmap Generator** is an intelligent learnin
 
 ## Key Features
 
-### 🤖 AI-Powered Learning
+###  AI-Powered Learning
 
 | Feature | Description |
 |---------|-------------|
@@ -92,20 +92,20 @@ The **AI-Powered Skill Development Roadmap Generator** is an intelligent learnin
 
 ### User Management
 
-- 🔐 Secure authentication (Login/Register/Guest mode)
-- 💎 Premium subscription workflow with admin approval
-- 📧 Automated email notifications for:
+-  Secure authentication (Login/Register/Guest mode)
+-  Premium subscription workflow with admin approval
+-  Automated email notifications for:
   - Successful registration
   - Subscription status updates
   - Admin alerts for new requests
-- ⏱️ Usage limits for free tier users
+-  Usage limits for free tier users
 
 ### Intelligent Chat System
 
-- 💬 Persistent conversation memory
-- 🗺️ RAG-powered roadmap generation chatbot
-- 📄 Document upload with contextual AI assistance
-- 📤 Export capabilities:
+-  Persistent conversation memory
+-  RAG-powered roadmap generation chatbot
+-  Document upload with contextual AI assistance
+-  Export capabilities:
   - PDF
   - JSON
   - TXT
@@ -113,17 +113,17 @@ The **AI-Powered Skill Development Roadmap Generator** is an intelligent learnin
 
 ### Admin Dashboard
 
-- ✅ Subscription approval/rejection workflow
-- 👥 User activity monitoring
-- 🔔 Automated notification system
-- 📊 Analytics and insights
+-  Subscription approval/rejection workflow
+-  User activity monitoring
+-  Automated notification system
+-  Analytics and insights
 
 ### Modern UI/UX
 
-- 📱 Fully responsive Bootstrap design
-- ✨ Smooth animations and transitions
-- 🌙 Dark mode support
-- 🎨 Intuitive dashboard layout
+-  Fully responsive Bootstrap design
+-  Smooth animations and transitions
+-  Dark mode support
+-  Intuitive dashboard layout
 
 ---
 
@@ -618,11 +618,11 @@ This project represents an evolution of my earlier AI roadmap generator work. I 
 
 The current version builds upon that foundation with significant enhancements:
 
-✨ Advanced RAG architecture with vector databases  
-✨ NotebookLM-style document intelligence  
-✨ Production-ready authentication and subscription system  
-✨ Improved scalability and deployment infrastructure  
-✨ Enhanced UI/UX with modern design patterns
+ Advanced RAG architecture with vector databases  
+ NotebookLM-style document intelligence  
+ Production-ready authentication and subscription system  
+ Improved scalability and deployment infrastructure  
+ Enhanced UI/UX with modern design patterns
 
 This journey has been a collaborative learning experience, and I'm grateful for all the support and encouragement received along the way.
 
